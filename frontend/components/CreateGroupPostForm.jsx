@@ -99,7 +99,7 @@ export const AddGroupPost = (newPost) => {
             {visible &&
                 <div className="create-post-container">
                     <form className="create-post-form" onSubmit={handlePostSubmit}>
-                        <button className="close-button" type="button" onClick={closePostForm}>
+                        <button className="close-button-post" type="button" onClick={closePostForm}>
                             <span>&times;</span>
                         </button>
                         <h1>Group Post </h1>

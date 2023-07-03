@@ -841,6 +841,21 @@ main {
   margin-top: 5px;
   margin-left: -650px;
 }
+.close-button-comment {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 0;
+  color: black;
+  border-color: transparent;
+  margin-top: 5px;
+  margin-left: -650px;
+}
 .create-post-image-container {
   width: 100%;
   max-height: 200px;
@@ -1394,8 +1409,7 @@ main {
   border-radius: 10px;
 }
 .alert-group-post-button {
-  background-color: #2c2b2b;
-  color: whitesmoke;
+  background-color: transparent;
 }
 .group-post-button > img,
 .alert-group-post-button > img {

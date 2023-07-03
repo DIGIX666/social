@@ -99,16 +99,15 @@ export const AddComment = (newComment) => {
             {visible &&
                 <div className="create-comment-container">
                     <form className="add-comment-form" onSubmit={handleCommentSubmit}>
-                        <button className="close-button" type="button" onClick={closeCommentForm}>
+                        <button className="close-button-comment" type="button" onClick={closeCommentForm}>
                             <span>&times;</span>
                         </button>
-                        <h1>Create Comment </h1>
+                        <h1>Comment </h1>
                         <input type="hidden" name="post-id" value={postId} />
+
+                        <textarea name="comment-text" contentEditable={true} className="post-text-content" onChange={(e) => setEmoji(e.target.value)} placeholder="Message..." />
+
                         <div className="image-location">
-                            <div>
-                                <input type="radio" id="Url" name="img-location" value="Url" onChange={() => handleLocalChange(false)} defaultChecked />
-                                <label htmlFor="Url">Add Online Image</label>
-                            </div>
                             <div>
                                 <input type="radio" id="local" name="img-location" value="local" onChange={() => handleLocalChange(true)} />
                                 <label htmlFor="local">Add Local Image</label>
@@ -147,30 +146,11 @@ export const AddComment = (newComment) => {
                                             setUrlImage("")
                                         }} />
                                     </div>}
-                                <div className="add-post-image">
-                                    <input type="text" className="create-post-image" id="create-post-image" placeholder="https://..."
-                                        onChange={(e) => setUrlImage(e.target.value)}
-                                    />
-                                </div>
                             </>
                         )}
                         <p>File Must Not Exceed 20MB</p>
-                        <textarea name="comment-text" contentEditable={true} className="post-text-content" onChange={(e) => setEmoji(e.target.value)} />
-                        <div className="create-post-threads">
-                            <input type="text" className="add-thread-input" placeholder="Add Thread" value={thread} onChange={(e) => setThread(e.target.value)} onKeyPress={handleKeyPress} />
-                            <button className="add-thread-button" type="button" onClick={addThread}>+</button>
-                        </div>
-                        {threadArr &&
-                            <>
-                                
-                                <div className="thread-container">
-                                    {threadArr.map((t, index) =>
-                                        <p key={index} className="added-thread" onClick={() => removeThread(index)}>{t}</p>
-                                    )
-                                    }
-                                </div>
-                            </>
-                        }
+                        
+        
 
                         {errorMes &&
                             <p className="error-message">{errorMes}</p>

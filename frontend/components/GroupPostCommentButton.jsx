@@ -98,7 +98,7 @@ export const GroupCommentButton = (commentInfo) => {
                             <button className="close-button" type="button" onClick={closeComments}>
                                 <span>&times;</span>
                             </button>
-                            <h1> Group Post Comments</h1>
+                            <h1> Group Comment</h1>
                             <AddGroupComment id={postId} onSubmit={getAllComments} />
                         </div>
                         <div className="comment-post">

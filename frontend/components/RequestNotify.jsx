@@ -85,14 +85,14 @@ export const AddedGroupNotify = ({ type, accepted }) => {
     useEffect(() => {
         let str
         if (type["action"] == "accepted-group-request") {
-            str = "😃" + `${type["user"]}` + " Has Now Joined " + `${type["group-name"]}`
+            str = `${type["user"]}` + " Has Now Joined " + `${type["group-name"]}`
             // setMessage(str)
         } else if (type["action"] == "remove-group-request") {
-            str = "🙃 You Have Been Removed From " + `${type["group-name"]}`
+            str = "You Have Been Removed From " + `${type["group-name"]}`
         } else if (type["action"] == "event-notif") {
-            str = "🎉🎉"+`${type["admin"]}`+" Had Created An Event For " + `${type["group-name"]}`
+            str = `${type["admin"]}`+" Had Created An Event For " + `${type["group-name"]}`
         }else {
-            str = "🤔 " + `${type["user"]}` + " Would Like To Join " + `${type["group-name"]}`
+            str = `${type["user"]}` + " Would Like To Join " + `${type["group-name"]}`
         }
         setMessage(str)
     }, [type])
