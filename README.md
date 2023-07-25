@@ -45,7 +45,3 @@ After cloning the directory and changing into the `social-network` directory
 - Docker
 - HTML5
 - Sqlite3
-
-## Authors
-
-LUIS316, jasonasante, gymlad, rw.smith
