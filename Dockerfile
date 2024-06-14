@@ -1,8 +1,17 @@
-# Build stage 
-FROM golang:1.18
-RUN mkdir /social-network
-COPY . /social-network
-WORKDIR /social-network
-RUN go build ./main.go
-EXPOSE 8080
-CMD ["/social-network/main"]
+FROM docker.io/library/golang:1.18
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the Go module files and download dependencies
+COPY go.mod go.sum ./
+RUN go mod download
+
+# Copy the rest of the application code
+COPY . .
+
+# Build the application
+RUN go build -o main .
+
+# Define the entry point for the container
+CMD ["./main"]
